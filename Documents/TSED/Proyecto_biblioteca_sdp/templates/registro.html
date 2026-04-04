@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Registro{% endblock %}
+
+{% block contenido %}
+<div class="auth-card">
+    <h2>Crear Cuenta</h2>
+    <form method="POST" class="form-vertical">
+        <label>Nombre</label>
+        <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+        <label>Email</label>
+        <input type="email" name="email" placeholder="correo@ejemplo.com" required>
+        <label>Contraseña</label>
+        <input type="password" name="password" placeholder="Elige una contraseña segura" required>
+        <button type="submit" class="btn-primary">Registrarse</button>
+    </form>
+    <p>¿Ya tienes cuenta? <a href="/login">Inicia sesión</a></p>
+</div>
+{% endblock %}

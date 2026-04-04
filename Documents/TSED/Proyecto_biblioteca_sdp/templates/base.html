@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual – {% block titulo %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<nav>
+    <span class="nav-brand">📚 Biblioteca Virtual</span>
+    <div class="nav-links">
+        {% if current_user.is_authenticated %}
+            <a href="/">Inicio</a>
+            <a href="/libros">Catálogo</a>
+            <a href="/about">Acerca de</a>
+            <span class="nav-user">Hola, {{ current_user.nombre }}</span>
+            <a href="/logout" class="btn-logout">Cerrar Sesión</a>
+        {% else %}
+            <a href="/login">Login</a>
+            <a href="/registro">Registro</a>
+        {% endif %}
+    </div>
+</nav>
+
+<main>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <div class="flash">{{ msg }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block contenido %}{% endblock %}
+</main>
+
+<footer>
+    <p>&copy; 2025 Biblioteca Virtual – Sistema de Gestión</p>
+</footer>
+
+</body>
+</html>

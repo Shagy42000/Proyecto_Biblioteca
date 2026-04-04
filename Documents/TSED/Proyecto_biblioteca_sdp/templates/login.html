@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Iniciar Sesión{% endblock %}
+
+{% block contenido %}
+<div class="auth-card">
+    <h2>Iniciar Sesión</h2>
+    <form method="POST" class="form-vertical">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="correo@ejemplo.com" required>
+        <label>Contraseña</label>
+        <input type="password" name="password" placeholder="Tu contraseña" required>
+        <button type="submit" class="btn-primary">Entrar</button>
+    </form>
+    <p>¿No tienes cuenta? <a href="/registro">Regístrate aquí</a></p>
+</div>
+{% endblock %}

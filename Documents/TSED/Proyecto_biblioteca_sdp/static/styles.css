@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── NAV ─────────────────────────────────────────── */
+nav {
+    background-color: #1a3c5e;
+    padding: 12px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-brand {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-links a {
+    color: #cfe2f3;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover { color: #fff; }
+
+.nav-user {
+    color: #90caf9;
+    font-size: 0.9rem;
+}
+
+.btn-logout {
+    background: #e53935;
+    color: #fff !important;
+    padding: 5px 12px;
+    border-radius: 4px;
+}
+
+/* ── MAIN ────────────────────────────────────────── */
+main {
+    padding: 30px;
+    flex: 1;
+}
+
+h1 { margin-bottom: 20px; color: #1a3c5e; }
+h2 { margin-bottom: 14px; color: #1a3c5e; }
+
+/* ── FLASH ───────────────────────────────────────── */
+.flash {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    padding: 10px 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+
+/* ── HERO ────────────────────────────────────────── */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 { font-size: 2rem; margin-bottom: 12px; }
+.hero p  { font-size: 1.1rem; margin-bottom: 24px; color: #555; }
+
+/* ── BOTONES ─────────────────────────────────────── */
+.btn-primary {
+    background: #1a3c5e;
+    color: #fff;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.btn-primary:hover { background: #145085; }
+
+.btn-edit {
+    background: #1976d2;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-right: 4px;
+}
+
+.btn-delete {
+    background: #e53935;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.btn-cancel {
+    background: #757575;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-left: 8px;
+}
+
+.btn-export {
+    background: #388e3c;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-right: 4px;
+}
+
+.btn-pdf {
+    background: #f57c00;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+/* ── FORMULARIOS ─────────────────────────────────── */
+.form-card, .auth-card {
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 24px;
+    max-width: 600px;
+}
+
+.auth-card {
+    margin: 40px auto;
+}
+
+.form-inline {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.form-inline input {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    flex: 1;
+    min-width: 130px;
+}
+
+.form-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-vertical label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.form-vertical input {
+    padding: 9px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.95rem;
+}
+
+/* ── EXPORT BAR ──────────────────────────────────── */
+.export-bar {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* ── TABLA ───────────────────────────────────────── */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+th {
+    background: #1a3c5e;
+    color: #fff;
+    padding: 12px 14px;
+    text-align: left;
+}
+
+td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #f5f9ff; }
+
+/* ── FOOTER ──────────────────────────────────────── */
+footer {
+    background: #1a3c5e;
+    color: #90caf9;
+    text-align: center;
+    padding: 14px;
+    font-size: 0.85rem;
+}

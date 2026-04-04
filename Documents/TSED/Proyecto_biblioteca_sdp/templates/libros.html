@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Catálogo{% endblock %}
+
+{% block contenido %}
+<h1>Catálogo de Libros</h1>
+
+<div class="form-card">
+    <h2>Agregar Libro</h2>
+    <form action="/agregar" method="POST" class="form-inline">
+        <input type="text" name="titulo" placeholder="Título" required>
+        <input type="text" name="autor" placeholder="Autor" required>
+        <input type="number" name="cantidad" placeholder="Cantidad" min="1" required>
+        <button type="submit" class="btn-primary">Agregar</button>
+    </form>
+</div>
+
+<div class="export-bar">
+    <strong>Exportar:</strong>
+    <a href="/exportar/txt" class="btn-export">TXT</a>
+    <a href="/exportar/json" class="btn-export">JSON</a>
+    <a href="/exportar/csv" class="btn-export">CSV</a>
+    <a href="/reporte-pdf" class="btn-pdf">📄 Reporte PDF</a>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Cantidad</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for libro in libros %}
+        <tr>
+            <td>{{ libro.get_id() }}</td>
+            <td>{{ libro.get_titulo() }}</td>
+            <td>{{ libro.get_autor() }}</td>
+            <td>{{ libro.get_cantidad() }}</td>
+            <td>
+                <a href="/editar/{{ libro.get_id() }}" class="btn-edit">Editar</a>
+                <a href="/eliminar/{{ libro.get_id() }}" class="btn-delete"
+                   onclick="return confirm('¿Eliminar este libro?')">Eliminar</a>
+            </td>
+        </tr>
+        {% else %}
+        <tr><td colspan="5">No hay libros registrados.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

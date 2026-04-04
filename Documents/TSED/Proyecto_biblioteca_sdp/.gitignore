@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.pyc
+.env
+biblioteca.db
+static/reporte_libros.pdf
